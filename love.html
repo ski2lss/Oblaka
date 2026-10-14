@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f5efe5"><title>Один год с тобой</title>
+<link rel="stylesheet" href="love.css"><script src="love-content.js" defer></script><script src="love.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#album">К альбому</a>
+<section class="invitation" id="invitation" aria-labelledby="invite-title">
+<a class="back" href="menu.html#c-surprise">← К меню</a>
+<div class="invitation__inner"><span class="eyebrow">НЕБОЛЬШОЙ СЮРПРИЗ ДЛЯ ТЕБЯ</span><span class="heart" aria-hidden="true">♡</span><h1 id="invite-title"></h1><p id="invite-note"></p><button class="pill" id="enter" type="button">Посмотреть <span aria-hidden="true">↗</span></button><span class="handwritten">кое-что важнее десерта</span></div>
+<span class="invitation__foot">СДЕЛАНО С ЛЮБОВЬЮ · ДЛЯ НАС ДВОИХ</span>
+</section>
+<main id="album" hidden>
+<header class="topline"><a href="menu.html#c-surprise">← Назад к ужину</a><span>НАША МАЛЕНЬКАЯ ИСТОРИЯ</span><span aria-hidden="true">♡</span></header>
+<section class="hero">
+<div class="hero__text"><p class="eyebrow" id="greeting"></p><h1 id="album-title" tabindex="-1"></h1><p class="hero__subtitle" id="subtitle"></p><p id="date"></p><a class="text-link" href="#moments">Листать воспоминания <span aria-hidden="true">↓</span></a></div>
+<figure class="hero__photo"><button class="photo-open" data-photo="cover" data-alt="Твой портрет в кафе" aria-label="Открыть портрет"><img src="images/us/cover.webp" width="1050" height="1400" alt="Твой портрет в кафе" fetchpriority="high"></button><figcaption class="handwritten">моя любимая ♡</figcaption><span class="photo-stamp" aria-hidden="true">LOVE<br>NOTES</span></figure>
+</section>
+<div class="dedication"><span aria-hidden="true">✳</span><p id="dedication"></p><span class="eyebrow">И Я ВЫБИРАЛ БЫ СНОВА</span></div>
+<section class="moments section" id="moments"><div class="section-heading"><span class="eyebrow">01 / СОХРАНИТЬ В ПАМЯТИ</span><h2>Наши <em>моменты</em></h2><p>Не все. Просто те, на которые хочется смотреть ещё.</p></div><div id="memories" class="memory-grid"></div></section>
+<section class="details section"><div class="section-heading"><span class="eyebrow">02 / МОИ ЛЮБИМЫЕ ДЕТАЛИ</span><h2>Столько причин<br><em>улыбаться.</em></h2></div><div class="details-grid" id="details"></div><p class="details-note handwritten">И на каждой фотографии — ты.</p></section>
+<section class="fun section"><div class="section-heading"><span class="eyebrow">03 / БЫТЬ СОБОЙ</span><h2>А ещё мы<br><em>вот такие.</em></h2><p>Мой любимый вид несерьёзности.</p></div><div class="fun-controls"><span>Листай фотографии →</span><div><button id="fun-prev" type="button" aria-label="Предыдущие смешные фото">←</button><button id="fun-next" type="button" aria-label="Следующие смешные фото">→</button></div></div><div class="fun-strip" id="funny" tabindex="0" aria-label="Наши смешные фотографии"></div></section>
+<section class="letter-section section" id="letter"><span class="eyebrow">04 / САМОЕ ГЛАВНОЕ</span><h2>У меня для тебя<br><em>письмо.</em></h2><p>Его не было в меню. Но оно было в планах.</p>
+<button class="envelope" id="letter-toggle" type="button" aria-expanded="false" aria-controls="letter-paper"><span class="envelope__address handwritten">только тебе</span><span class="seal" aria-hidden="true">♡</span><span class="envelope__action">Нажми, чтобы открыть</span></button>
+<article class="letter-paper" id="letter-paper" hidden tabindex="-1"><span class="eyebrow">НЕСКОЛЬКО СЛОВ ОТ МЕНЯ</span><h3 id="letter-title"></h3><div id="letter-body"></div><p class="handwritten signature" id="signature"></p><button class="text-link" id="letter-close" type="button">Сложить письмо ↑</button></article>
+</section>
+<footer class="ending"><img src="images/us/drawing.webp" alt="Наш нарисованный портрет у деревянной лестницы" width="440" height="550" loading="lazy"><p class="handwritten">мы — моя любимая история</p><h2 id="ending"></h2><a class="text-link" href="#album">Перелистать сначала ↑</a><span class="eyebrow">С ЛЮБОВЬЮ, ДЕНИС ♡</span></footer>
+</main>
+<dialog id="viewer" aria-label="Просмотр фотографии"><button class="viewer-close" aria-label="Закрыть фотографию" type="button">×</button><img id="viewer-image" alt=""><p id="viewer-caption"></p></dialog>
+<noscript><p class="noscript">Для открытия интерактивного альбома включи JavaScript в браузере.</p></noscript>
+</body></html>
