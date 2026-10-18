@@ -352,14 +352,6 @@
 	align-items: center
 }
 
-.menu-header__back {
-	
-}
-
-.menu-header__service {
-
-}
-
 .menu-header__button {
 	background: #fff;
 }
@@ -466,4 +458,11 @@ button:focus-visible, a:focus-visible, input:focus-visible { outline: 3px solid 
 .menu-header__back { color: #111; }
 
 /* Особлива позиція відкриває особистий альбом. */
-.surprise-link { display:inline-block; margin-top:24px; padding:14px 24px; background:#111; color:#fff; border-radius:24px; text-decoration:none; font-weight:600; }
+.dialog__body .surprise-link { display:inline-block; margin-top:24px; padding:14px 24px; background-color:#3c487e; color:#fff; border-radius:24px; text-decoration:none; font-weight:600; }
+
+/* Картинка «ты» и отдельный текст открытой позиции. */
+.surprise-portrait-link { display:block; }
+.surprise-message { display:flex; flex-direction:column; align-items:center; gap:14px; text-align:center; }
+.surprise-you { display:block; width:88px; height:auto; }
+.dialog__body .surprise-message { font-size:22px; line-height:1.35; margin-bottom:0; }
+.surprise-body { text-align:center; }

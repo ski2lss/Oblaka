@@ -3,7 +3,7 @@
   const c = window.LOVE_CONTENT;
   const $ = s => document.querySelector(s);
   const esc = s => String(s ?? '').replace(/[&<>"']/g, x => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[x]));
-  const src = name => 'images/us/' + encodeURIComponent(name) + '.webp';
+  const src = name => 'images/us/' + encodeURIComponent(name) + (/\.(webp|jpe?g|png)$/i.test(name) ? '' : '.webp');
   const photo = (item) => '<button class="photo-open" type="button" data-photo="' + esc(item.image) + '" data-alt="' + esc(item.alt) + '" aria-label="Открыть: ' + esc(item.alt) + '"><img src="' + src(item.image) + '" alt="' + esc(item.alt) + '" width="1050" height="1400" loading="lazy"></button>';
   const texts = {'#invite-title':c.intro,'#invite-note':c.introNote,'#album-title':c.title,'#greeting':c.greeting,'#subtitle':c.subtitle,'#date':c.date,'#dedication':c.dedication,'#letter-title':c.letterTitle,'#signature':c.signature,'#ending':c.ending};
   Object.entries(texts).forEach(([id,text]) => $(id).textContent = text);
@@ -19,7 +19,6 @@
   function setLetter(open) { $('#letter-paper').hidden = !open; $('#letter-toggle').setAttribute('aria-expanded',String(open)); $('#letter-toggle').hidden = open; if(open) { $('#letter-paper').focus({preventScroll:true}); $('#letter-paper').scrollIntoView({behavior:reduced?'instant':'smooth',block:'start'}); } else $('#letter-toggle').focus(); }
   $('#letter-toggle').addEventListener('click',()=>setLetter(true));
   $('#letter-close').addEventListener('click',()=>setLetter(false));
-  for(const [id,direction] of [['#fun-prev',-1],['#fun-next',1]]) $(id).addEventListener('click',()=>$('#funny').scrollBy({left:direction * ($('#funny').querySelector('figure').getBoundingClientRect().width + 22),behavior:reduced?'instant':'smooth'}));
   const viewer=$('#viewer'); let lastFocus,savedScroll=0;
   document.querySelectorAll('[data-photo]').forEach(button=>button.addEventListener('click',()=>{
     lastFocus=button; savedScroll=scrollY; $('#viewer-image').src=src(button.dataset.photo); $('#viewer-image').alt=button.dataset.alt; $('#viewer-caption').textContent=button.dataset.alt;

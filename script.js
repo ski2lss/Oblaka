@@ -62,7 +62,7 @@ if (window.MENU_DATA) {
   $$('[data-open-dish]').forEach(button => button.addEventListener('click', () => {
     const item = dishes.get(button.dataset.openDish);
     if (item.surprise) {
-      openDialog(`<img class="dialog__image" src="${escapeHTML(item.image)}" alt="${escapeHTML(item.name)}"><div class="dialog__body"><h2 id="dialog-title">${escapeHTML(item.name)}</h2><p class="dish__price">Безцінно</p><p>${escapeHTML(item.description)}</p><a class="surprise-link" href="love.html">Детальніше →</a></div>`);
+      openDialog(`<a class="surprise-portrait-link" href="love.html" aria-label="Открыть сюрприз"><img class="dialog__image" src="${escapeHTML(item.image)}" alt="${escapeHTML(item.name)}"></a><div class="dialog__body surprise-body"><h2 id="dialog-title" class="surprise-message"><img class="surprise-you" src="images/us/pointing-at-you.png" alt="Ты"><span>${escapeHTML(item.modalDescription || item.description)}</span></h2><a class="surprise-link" href="love.html">Детальніше →</a></div>`);
       return;
     }
     openDialog(`${item.image ? `<img class="dialog__image" src="${item.image}" alt="${escapeHTML(item.name)}">` : ''}<div class="dialog__body ${item.image ? '' : 'dialog__body--plain'}"><h2 id="dialog-title">${escapeHTML(item.name)}</h2><p class="dish__price">${money(item.price)}</p><p>${escapeHTML(item.description)}</p><p class="dish__weight">${escapeHTML(item.weight)}</p>${item.available === false ? '<p>Тимчасово недоступно</p>' : ''}${item.options.map(option => `<div class="dialog__options"><h3>${escapeHTML(option.name)}</h3><ul>${option.items.map(value => `<li>${escapeHTML(value.name)}${value.price ? ' · +' + money(value.price) : ''}</li>`).join('')}</ul></div>`).join('')}</div>`);

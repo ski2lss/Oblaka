@@ -1513,15 +1513,15 @@ window.MENU_DATA = [
         "items": [
           {
             "id": "our-special",
-            "name": "Моя найулюбленіша",
-            "description": "Найособливіша частина цього вечора. Приготовано з любов’ю, тільки для тебе.",
+            "name": "Моя булачка",
+            "description": "Дещо особливе, тільки для тебе.",
             "price": 0,
-            "priceLabel": "Безцінно",
             "weight": "Один особливий сюрприз",
-            "image": "images/us/cover.webp",
+            "image": "images/us/kisya4.jpeg",
             "available": true,
             "options": [],
-            "surprise": true
+            "surprise": true,
+            "modalDescription": "Самая красивая часть этого вечера"
           }
         ]
       }

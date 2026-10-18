@@ -1,0 +1,59 @@
+/* Дополнительные главы альбома. */
+.album-nav{max-width:1054px;margin:0 auto;display:flex;gap:12px;flex-wrap:wrap;padding:25px;border-block:1px solid var(--line)}
+.album-nav a{font-size:12px;text-decoration:none;border:1px solid var(--line);border-radius:30px;padding:9px 15px}
+.museum,.game-section,.little-things{border-bottom:1px solid var(--line)}
+#museum-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.museum-card{background:#fffbf4;padding:16px;border:1px solid var(--line);text-align:left;transform:rotate(-2deg);box-shadow:0 8px 24px #5425290c}
+.museum-card:nth-child(2){transform:rotate(2deg);margin-top:20px}
+.museum-card img{width:100%;aspect-ratio:1;object-fit:cover;margin:16px 0}
+.museum-title{display:block;font:26px/1.15 var(--serif);letter-spacing:-.03em}
+.museum-label{display:block;font-size:11px;margin-top:20px;color:var(--body)}
+#dance-again{margin-top:35px}
+#pocket-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.pocket{position:relative;display:flex;flex-direction:column;align-items:flex-start;border:1px solid #d8b6a8;padding:30px;background:linear-gradient(155deg,transparent 49.7%,#d8b6a8 50%,transparent 50.3%) right top/100% 50% no-repeat,#eddccd;min-height:230px;text-align:left}
+.pocket:nth-child(2),.pocket:nth-child(3){background-color:#eee5d9}
+.pocket-mark{font:34px var(--serif);margin-bottom:15px;color:var(--rose)}
+.pocket-title{font:33px/1.1 var(--serif);margin-top:12px;letter-spacing:-.04em}.pocket-open{font-size:11px;margin-top:25px}
+.game-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:24px;font-size:12px}
+#memory-game{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;max-width:680px;margin:auto}
+.memory-tile{position:relative;aspect-ratio:4/5;border:1px solid var(--rose);border-radius:8px;padding:0;overflow:hidden;background:repeating-linear-gradient(45deg,#713b40 0 8px,#69353a 8px 16px);color:#efdac8}
+.memory-tile span{font:45px var(--serif)}.memory-tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;visibility:hidden}
+.memory-tile.flipped img{visibility:visible}.memory-tile.matched{border:4px solid #9baf91}.memory-tile.matched:after{content:'✓';position:absolute;bottom:5px;right:5px;border-radius:50%;background:#f5efe5;color:#426138;width:25px;height:25px}
+.win-note{padding:25px;background:#eee3d2;margin-top:25px;text-align:center;font:26px/1.4 var(--serif)}
+.little-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px}.little-grid article{padding:30px;border:1px solid var(--line);display:flex;flex-direction:column;align-items:flex-start;background:#fff9f0}.little-grid p{font:29px/1.3 var(--serif);margin:25px 0 30px;min-height:145px}.little-grid .pill{margin-top:auto;font-size:13px;gap:0}
+.credits{margin:10px auto 35px;font-size:12px;line-height:2;color:var(--body)}
+#secret-heart{border:0;background:transparent;font:58px var(--serif);color:var(--rose);padding:0 20px}#secret-hint{font-size:10px;color:var(--body);margin:10px 0 35px}
+#extra-dialog{background:#fffbf4;color:var(--ink);border:1px solid var(--line);padding:48px 28px 35px;width:calc(100% - 36px);max-width:520px;max-height:85svh;overflow:auto}#extra-dialog::backdrop,#dance-dialog::backdrop{background:#29141cbf;backdrop-filter:blur(6px)}
+.extra-close{position:absolute;right:10px;top:10px;background:transparent;border:0;width:36px;height:36px;font-size:26px}.note-heart{font:65px var(--serif);color:var(--rose)}#extra-content img{max-height:330px;width:100%;object-fit:contain;background:var(--paper);margin-bottom:25px}#extra-content h2{font-size:39px;margin:10px 0 25px}#extra-content p{font-size:16px;line-height:1.9;margin-bottom:25px}#extra-content>.handwritten{color:var(--rose)}
+#dance-dialog{width:calc(100% - 32px);max-width:520px;max-height:95svh;overflow:auto;border:0;padding:35px 20px;text-align:center;background:var(--paper);color:var(--ink)}#dance-dialog h2{font-size:43px;margin:18px 0}.dance-stage{position:relative;height:235px;overflow:hidden;margin:20px -5px 12px;border-bottom:1px solid var(--line)}.dancing-photo{position:absolute;width:130px;padding:7px;background:#fffaf5;left:calc(50% - 65px);top:10px;animation:moon-slide 2s ease-in-out infinite}.dancing-photo img{width:100%;height:155px;object-fit:cover}.dancing-photo figcaption{font-size:11px;padding:5px 0}.dance-spark{position:absolute;color:var(--rose);font-size:35px;top:45px}.spark-one{left:12%}.spark-two{right:12%;top:120px}#dance-dialog>p{font-size:13px;margin:15px 0 20px}#dance-skip{font-size:13px}
+@keyframes moon-slide{0%,100%{transform:translateX(60px) rotate(8deg)}25%{transform:translateX(10px) translateY(-8px) rotate(-6deg)}50%{transform:translateX(-60px) rotate(-8deg)}75%{transform:translateX(-10px) translateY(-8px) rotate(6deg)}}
+@media(max-width:650px){#museum-grid{grid-template-columns:1fr;gap:28px}.museum-card{width:92%;padding:18px}.museum-card:nth-child(2){margin:0 0 0 auto}.museum-card img{aspect-ratio:4/3}.museum-title{font-size:29px}#pocket-grid{gap:12px}.pocket{padding:18px 14px;min-height:215px}.pocket .eyebrow{font-size:8px;letter-spacing:.1em}.pocket-title{font-size:25px}.pocket-open{font-size:9px}.little-grid{grid-template-columns:1fr}.little-grid p{min-height:100px}#memory-game{gap:8px}.memory-tile span{font-size:30px}.game-toolbar{font-size:11px}.game-toolbar button{font-size:11px}#extra-content h2{font-size:33px}}
+@media(prefers-reduced-motion:reduce){.dancing-photo{animation:none}}
+
+.little-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.little-grid article{min-width:0}.little-grid .pill{max-width:100%;white-space:normal;text-align:left;padding:14px 20px}@media(max-width:650px){.little-grid{grid-template-columns:minmax(0,1fr)}}
+
+#pocket-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.pocket{min-width:0}.pocket-title{overflow-wrap:anywhere}@media(max-width:360px){#pocket-grid{grid-template-columns:1fr}.pocket{min-height:190px}}
+
+/* Настоящий ролик: сохраняем кадр целиком, включая ноги. */
+.dance-stage--video{height:auto;border:0;margin:18px 0 12px}.dance-stage--video video{display:block;height:min(40svh,340px);width:auto;max-width:100%;object-fit:contain;margin:auto;border:7px solid #fffaf5;background:#211b1b;border-radius:3px}
+
+@media(max-width:360px){#dance-dialog h2{font-size:35px}}
+
+.random-photo-control{margin-top:14px}.hero .random-photo-control .text-link{margin-top:0;color:var(--rose)}
+
+.little-grid.little-grid--single { grid-template-columns: minmax(0, 1fr); max-width: 640px; margin-inline: auto; }
+
+/* Фото без горизонтальной ленты и стрелок */
+.fun-album .section-heading { margin-bottom: 28px; }
+.fun-album .section-heading h2 { font-size: clamp(38px, 5vw, 62px); max-width: 650px; }
+.fun-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
+.fun-grid .fun-card { min-width:0; margin:0; padding:8px 8px 12px; }
+.fun-grid .fun-card:first-child:nth-last-child(odd) { grid-column:1 / -1; }
+.fun-grid .fun-card img { width:100%; aspect-ratio:3/4; object-fit:cover; }
+.fun-grid .fun-card:first-child:nth-last-child(odd) img { aspect-ratio:3/4; height:auto; object-fit:contain; }
+.fun-grid .fun-card figcaption { margin:0; padding-top:8px; font-size:15px; line-height:1.3; }
+@media(min-width:700px) { .fun-grid { grid-template-columns:repeat(3,minmax(0,1fr)); } .fun-grid .fun-card:first-child:nth-last-child(odd) { grid-column:auto; } .fun-grid .fun-card:first-child:nth-last-child(odd) img { aspect-ratio:3/4; } }
+@media(max-width:650px) { .fun-album { padding-top:45px; padding-bottom:45px; } .fun-grid { gap:14px; } }
+
+/* Большая подборка портретов: одинаковая сетка на телефоне */
+@media(max-width:650px){.details-grid .detail:last-child:nth-child(even){grid-column:auto;width:auto;margin-top:0;transform:rotate(-1deg)}}
